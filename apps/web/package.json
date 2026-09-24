@@ -1,5 +1,5 @@
 {
-  "name": "web",
+  "name": "@numo/web",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -42,7 +42,8 @@
     "@radix-ui/react-toggle": "1.1.1",
     "@radix-ui/react-toggle-group": "1.1.1",
     "@radix-ui/react-tooltip": "1.1.6",
-    "@repo/types": "workspace:*",
+    "@numo/eslint-config": "workspace:*",
+    "@numo/types": "workspace:*",
     "@tailwindcss/postcss": "^4.1.9",
     "@types/node": "^22",
     "@types/react": "^19",

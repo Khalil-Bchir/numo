@@ -47,16 +47,16 @@ importers:
       '@hono/zod-validator':
         specifier: ^0.2.1
         version: 0.2.2(hono@4.12.12)(zod@3.25.76)
-      '@repo/database':
+      '@numo/database':
         specifier: workspace:*
         version: link:../../packages/database
-      '@repo/eslint-config':
+      '@numo/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
-      '@repo/types':
+      '@numo/types':
         specifier: workspace:*
         version: link:../../packages/types
-      '@repo/typescript-config':
+      '@numo/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
       '@supabase/supabase-js':
@@ -114,6 +114,51 @@ importers:
         specifier: ^3.22.4
         version: 3.25.76
 
+  apps/ios: {}
+
+  apps/landing:
+    dependencies:
+      animejs:
+        specifier: ^4.5.0
+        version: 4.5.0
+      lucide-react:
+        specifier: ^0.454.0
+        version: 0.454.0(react@19.2.1)
+      next:
+        specifier: 16.0.10
+        version: 16.0.10(@babel/core@7.29.0)(@opentelemetry/api@1.9.0)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+      react:
+        specifier: 19.2.1
+        version: 19.2.1
+      react-dom:
+        specifier: 19.2.1
+        version: 19.2.1(react@19.2.1)
+    devDependencies:
+      '@numo/typescript-config':
+        specifier: workspace:*
+        version: link:../../packages/typescript-config
+      '@tailwindcss/postcss':
+        specifier: ^4.1.9
+        version: 4.2.2
+      '@types/node':
+        specifier: ^22.0.0
+        version: 22.19.17
+      '@types/react':
+        specifier: ^19.0.0
+        version: 19.2.14
+      '@types/react-dom':
+        specifier: ^19.0.0
+        version: 19.2.3(@types/react@19.2.14)
+      postcss:
+        specifier: ^8.5.0
+        version: 8.5.9
+      tailwindcss:
+        specifier: ^4.1.9
+        version: 4.2.2
+      typescript:
+        specifier: ^5.0.0
+        version: 5.9.3
+
   apps/web:
     dependencies:
       '@ai-sdk/openai':
@@ -125,6 +170,12 @@ importers:
       '@hookform/resolvers':
         specifier: ^3.10.0
         version: 3.10.0(react-hook-form@7.72.1(react@19.2.1))
+      '@numo/eslint-config':
+        specifier: workspace:*
+        version: link:../../packages/eslint-config
+      '@numo/types':
+        specifier: workspace:*
+        version: link:../../packages/types
       '@radix-ui/react-accordion':
         specifier: 1.2.2
         version: 1.2.2(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
@@ -206,9 +257,6 @@ importers:
       '@radix-ui/react-tooltip':
         specifier: 1.1.6
         version: 1.1.6(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
-      '@repo/types':
-        specifier: workspace:*
-        version: link:../../packages/types
       '@tailwindcss/postcss':
         specifier: ^4.1.9
         version: 4.2.2
@@ -326,12 +374,12 @@ importers:
       '@faker-js/faker':
         specifier: ^8.4.0
         version: 8.4.1
+      '@numo/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
       '@prisma/client':
         specifier: ^6.19.0
         version: 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
-      '@repo/typescript-config':
-        specifier: workspace:*
-        version: link:../typescript-config
       '@supabase/supabase-js':
         specifier: ^2.48.0
         version: 2.103.0
@@ -410,7 +458,7 @@ importers:
 
   packages/types:
     dependencies:
-      '@repo/typescript-config':
+      '@numo/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
       typescript:
@@ -2291,6 +2339,17 @@ packages:
 
   ajv@8.18.0:
     resolution: {integrity: sha512-PlXPeEWMXMZ7sPYOHqmDyCJzcfNrUr3fGNKtezX14ykXOEIvyK81d+qydx89KY5O71FKMPaQ2vBfBFI5NHR63A==}
+
+  animejs@4.5.0:
+    resolution: {integrity: sha512-NQimYX+lz8WaXonGS9zVVoviCIAjONeJayxacUditaivYLqyXgGjFKjuyl0aUUhFKm5MriX9ty1TGovNzoJQWA==}
+    peerDependencies:
+      '@types/three': '>=0.150.0'
+      three: '>=0.150.0'
+    peerDependenciesMeta:
+      '@types/three':
+        optional: true
+      three:
+        optional: true
 
   ansi-escapes@4.3.2:
     resolution: {integrity: sha512-gKXj5ALrKWQLsYG9jlTRmR/xKluxHV+Z9QEwNIgCfM1/uwPMCuzVVnh5mwTd+OuBZcwSIMbqssNWRm1lE51QaQ==}
@@ -6299,7 +6358,7 @@ snapshots:
   '@types/body-parser@1.19.6':
     dependencies:
       '@types/connect': 3.4.38
-      '@types/node': 20.19.39
+      '@types/node': 22.19.17
 
   '@types/compression@1.8.1':
     dependencies:
@@ -6308,7 +6367,7 @@ snapshots:
 
   '@types/connect@3.4.38':
     dependencies:
-      '@types/node': 20.19.39
+      '@types/node': 22.19.17
 
   '@types/d3-array@3.2.2': {}
 
@@ -6338,7 +6397,7 @@ snapshots:
 
   '@types/express-serve-static-core@5.1.1':
     dependencies:
-      '@types/node': 20.19.39
+      '@types/node': 22.19.17
       '@types/qs': 6.15.0
       '@types/range-parser': 1.2.7
       '@types/send': 1.2.1
@@ -6383,16 +6442,16 @@ snapshots:
 
   '@types/send@1.2.1':
     dependencies:
-      '@types/node': 20.19.39
+      '@types/node': 22.19.17
 
   '@types/serve-static@2.2.0':
     dependencies:
       '@types/http-errors': 2.0.5
-      '@types/node': 20.19.39
+      '@types/node': 22.19.17
 
   '@types/ws@8.18.1':
     dependencies:
-      '@types/node': 20.19.39
+      '@types/node': 22.19.17
 
   '@typescript-eslint/eslint-plugin@8.58.2(@typescript-eslint/parser@8.58.2(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3)':
     dependencies:
@@ -6584,6 +6643,8 @@ snapshots:
       fast-uri: 3.1.0
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
+
+  animejs@4.5.0: {}
 
   ansi-escapes@4.3.2:
     dependencies:

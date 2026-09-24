@@ -1,6 +1,6 @@
-import { PrismaClient } from '@repo/database';
+import { PrismaClient } from '@numo/database';
 import type { SupabaseClient } from '@supabase/supabase-js';
-import type { Database } from '@repo/types';
+import type { Database } from '@numo/types';
 
 export type AbstractServiceOptions = {
   prisma: PrismaClient;

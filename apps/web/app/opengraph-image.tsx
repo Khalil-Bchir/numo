@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og"
 
-export const alt = "SaaS Boilerplate — Next.js + Hono starter"
+export const alt = "Numo — Personal Budget iOS App"
 export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
 
@@ -77,10 +77,10 @@ export default function OpenGraphImage() {
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 12, maxWidth: 720 }}>
             <div style={{ fontSize: 62, fontWeight: 700, letterSpacing: "-0.03em", lineHeight: 1.05 }}>
-              SaaS Boilerplate
+              Numo
             </div>
             <div style={{ fontSize: 30, color: "#94a3b8", lineHeight: 1.3 }}>
-              Next.js + Hono monorepo — auth, typed API, Prisma, Turborepo
+              Personal budget iOS app — Next.js, Hono, Supabase, Prisma
             </div>
           </div>
         </div>

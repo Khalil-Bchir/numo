@@ -1,6 +1,6 @@
 import { createClient } from '@supabase/supabase-js'
 import type { SupabaseClient } from '@supabase/supabase-js'
-import type { Database } from '@repo/types'
+import type { Database } from '@numo/types'
 import { env } from '../config/env.js'
 
 let supabaseClient: SupabaseClient<Database> | null = null

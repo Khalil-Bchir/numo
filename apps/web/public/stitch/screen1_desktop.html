@@ -1,0 +1,1011 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Kinetic Minimal Ledger — Radical clarity for personal finance</title>
+<!-- Apple System Font / Inter Fallback & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "tertiary-container": "#086119",
+          "on-tertiary-fixed-variant": "#005312",
+          "surface-container-low": "#f7f2f2",
+          "surface-dim": "#ddd9d8",
+          "on-surface-variant": "#484555",
+          "on-error": "#ffffff",
+          "on-secondary-fixed": "#1b0063",
+          "on-secondary": "#ffffff",
+          "background": "#fdf8f8",
+          "on-surface": "#1c1b1b",
+          "surface-container-highest": "#e6e1e1",
+          "outline": "#797587",
+          "surface-variant": "#e6e1e1",
+          "primary-fixed-dim": "#c9beff",
+          "tertiary-fixed-dim": "#87d982",
+          "surface-container-high": "#ece7e7",
+          "on-tertiary-container": "#88da83",
+          "tertiary-fixed": "#a3f69c",
+          "on-secondary-fixed-variant": "#4612cf",
+          "tertiary": "#00470e",
+          "primary": "#3b00bb",
+          "on-primary": "#ffffff",
+          "surface": "#fdf8f8",
+          "on-primary-fixed": "#1b0063",
+          "secondary": "#5c37e4",
+          "secondary-fixed": "#e6deff",
+          "primary-fixed": "#e6deff",
+          "surface-container": "#f1edec",
+          "primary-container": "#532bdb",
+          "surface-container-lowest": "#ffffff",
+          "on-background": "#1c1b1b",
+          "on-secondary-container": "#fffbff",
+          "surface-tint": "#5e3be6",
+          "inverse-primary": "#c9beff",
+          "outline-variant": "#c9c4d8",
+          "secondary-fixed-dim": "#c9beff",
+          "surface-bright": "#fdf8f8",
+          "error-container": "#ffdad6",
+          "on-tertiary-fixed": "#002204",
+          "error": "#ba1a1a",
+          "inverse-on-surface": "#f4f0ef",
+          "on-error-container": "#93000a",
+          "on-primary-container": "#cabfff",
+          "secondary-container": "#7556fe",
+          "on-primary-fixed-variant": "#4612cf",
+          "on-tertiary": "#ffffff",
+          "inverse-surface": "#313030"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xl": "2.5rem",
+          "space-2xl": "4rem",
+          "space-3xl": "6rem",
+          "space-lg": "1.5rem",
+          "space-xs": "0.25rem",
+          "gutter": "1.5rem",
+          "margin-desktop": "3rem",
+          "gutter-desktop": "2rem",
+          "space-md": "1rem",
+          "space-sm": "0.5rem",
+          "margin": "1.5rem"
+        },
+        "fontFamily": {
+          "display-md": ["-apple-system", "BlinkMacSystemFont", "SF Pro Display", "Inter", "sans-serif"],
+          "body-lg": ["-apple-system", "BlinkMacSystemFont", "SF Pro Text", "Inter", "sans-serif"],
+          "headline-sm": ["-apple-system", "BlinkMacSystemFont", "SF Pro Display", "Inter", "sans-serif"],
+          "headline-md": ["-apple-system", "BlinkMacSystemFont", "SF Pro Display", "Inter", "sans-serif"],
+          "body-sm": ["-apple-system", "BlinkMacSystemFont", "SF Pro Text", "Inter", "sans-serif"],
+          "label-sm": ["-apple-system", "BlinkMacSystemFont", "SF Pro Text", "Inter", "sans-serif"],
+          "display-lg-mobile": ["-apple-system", "BlinkMacSystemFont", "SF Pro Display", "Inter", "sans-serif"],
+          "headline-lg": ["-apple-system", "BlinkMacSystemFont", "SF Pro Display", "Inter", "sans-serif"],
+          "body-md": ["-apple-system", "BlinkMacSystemFont", "SF Pro Text", "Inter", "sans-serif"],
+          "label-lg": ["-apple-system", "BlinkMacSystemFont", "SF Pro Text", "Inter", "sans-serif"],
+          "display-md-mobile": ["-apple-system", "BlinkMacSystemFont", "SF Pro Display", "Inter", "sans-serif"],
+          "display-lg": ["-apple-system", "BlinkMacSystemFont", "SF Pro Display", "Inter", "sans-serif"],
+          "label-md": ["-apple-system", "BlinkMacSystemFont", "SF Pro Text", "Inter", "sans-serif"]
+        },
+        "fontSize": {
+          "label-lg": ["15px", { "lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+          "display-lg-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "600" }],
+          "body-lg": ["17px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+          "body-md": ["15px", { "lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+          "display-md-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.025em", "fontWeight": "600" }],
+          "display-md": ["44px", { "lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "600" }],
+          "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "500" }],
+          "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }],
+          "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.025em", "fontWeight": "600" }],
+          "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+          "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+          "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+          "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.035em", "fontWeight": "600" }]
+        }
+      },
+    },
+  }
+</script>
+<style>
+    .tabular-nums {
+      font-variant-numeric: tabular-nums;
+    }
+    .hairline-card {
+      background-color: #ffffff;
+      border: 1px solid #E8E8EA;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    }
+    .apple-shadow {
+      box-shadow: 0 1px 3px rgba(28, 27, 27, 0.03), 0 6px 16px rgba(28, 27, 27, 0.04);
+    }
+    .surface-stage {
+      box-shadow: 0 16px 40px -12px rgba(28, 27, 27, 0.08), 0 0 0 1px #E8E8EA;
+    }
+    @keyframes pulse-subtle {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+    .animate-pulse-subtle {
+      animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    .step-active {
+      border-color: #532bdb !important;
+      box-shadow: 0 10px 25px -5px rgba(83, 43, 219, 0.12), 0 0 0 1px #532bdb !important;
+      background-color: #ffffff !important;
+    }
+    .step-active .step-num {
+      color: #532bdb !important;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body class="bg-[#FCF9F8] text-on-surface antialiased selection:bg-primary-container selection:text-white font-body-md text-body-md min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="fixed top-5 left-0 right-0 z-50 flex justify-center px-6 transition-all duration-200" id="site-header"><div class="w-full max-w-4xl bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md rounded-full px-6 py-3 border border-outline-variant/40 shadow-sm flex items-center justify-between transition-all duration-200"><a class="text-body-lg font-headline-sm tracking-tight text-on-surface font-semibold flex items-center gap-2" href="#"><span class="w-3 h-3 rounded-full bg-primary-container inline-block"></span>Numo</a><nav class="hidden md:flex items-center space-x-8"><a class="text-on-surface font-semibold text-label-lg font-label-lg hover:text-primary transition-colors duration-150" href="#features">Features</a><a class="text-on-surface-variant hover:text-on-surface transition-colors duration-150 text-label-lg font-label-lg" href="#how-it-works">How it works</a><a class="text-on-surface-variant hover:text-on-surface transition-colors duration-150 text-label-lg font-label-lg" href="#privacy">Privacy</a></nav><div class="flex items-center gap-3"><a class="bg-primary-container text-white text-label-lg font-label-lg px-5 py-2.5 rounded-[18px] hover:bg-secondary transition duration-150 active:scale-[0.98] inline-flex items-center" href="#waitlist">Join the beta</a></div></div></header>
+<main class="flex-grow">
+<!-- Hero Section with Living Interactive Product Surface -->
+<section class="max-w-[1200px] mx-auto px-6 pt-28 pb-20">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+<!-- Left Hero Content (Preserved exactly) -->
+<div class="lg:col-span-6 space-y-7">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#F1EAFF] border border-[#E8E8EA]">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="text-[13px] font-semibold tracking-wider text-primary-container uppercase">Personal Finance, Simplified</span>
+</div>
+<h1 class="text-display-lg-mobile md:text-display-lg font-display-lg text-on-surface tracking-tight leading-[1.08] text-balance">
+            Know where your money goes. Without thinking about it.
+          </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-xl leading-relaxed">Numo makes everyday expense tracking almost effortless. Record a purchase in seconds, see what you have left, and move on.</p>
+<!-- CTAs -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+<a class="bg-primary-container text-white rounded-[18px] px-7 py-3.5 font-label-lg text-label-lg hover:bg-secondary active:scale-[0.98] transition text-center apple-shadow" href="#waitlist">
+              Join the beta
+            </a>
+<a class="bg-white border border-[#E8E8EA] text-on-surface hover:bg-[#F6F3F2] rounded-[18px] px-6 py-3.5 font-label-lg text-label-lg active:scale-[0.98] transition text-center" href="#how-it-works">
+              See how it works
+            </a>
+</div>
+<!-- Reassurance Badge -->
+<div class="flex items-center gap-2 pt-2 text-body-sm font-body-sm text-outline">
+<span class="material-symbols-outlined text-[18px] text-outline">verified_user</span>
+<span class="">Built for iPhone · Private by design · Free during beta</span>
+</div>
+</div>
+<!-- Right Hero: Living Product Demonstration Surface (No device mockups / frames) -->
+<div class="lg:col-span-6">
+<div class="surface-stage bg-white rounded-[28px] border border-[#E8E8EA] p-6 sm:p-7 relative transition-all duration-300">
+<!-- Interactive Controller Header -->
+<div class="flex items-center justify-between pb-5 border-b border-[#F6F3F2]">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-[#34C759] inline-block animate-pulse-subtle"></span>
+<span class="text-xs font-semibold uppercase tracking-wider text-outline">Live Kinetic Demonstration</span>
+</div>
+<!-- Step state switcher / Replay button -->
+<div class="flex items-center gap-1.5 bg-[#F6F3F2] p-1 rounded-full text-[12px] font-medium">
+<button class="px-2.5 py-1 rounded-full text-outline hover:text-on-surface transition-all" id="btn-state-1" onclick="setHeroState(1)">1. Ready</button>
+<button class="px-2.5 py-1 rounded-full transition-all bg-white text-on-surface shadow-sm font-semibold" id="btn-state-2" onclick="setHeroState(2)">2. Entry</button>
+<button class="px-2.5 py-1 rounded-full text-outline hover:text-on-surface transition-all" id="btn-state-3" onclick="setHeroState(3)">3. Saved</button>
+<button class="p-1 rounded-full text-outline hover:text-on-surface ml-0.5" id="btn-hero-autoplay" onclick="toggleHeroAutoPlay()" title="Toggle autoplay">
+<span class="material-symbols-outlined text-[16px] block">sync</span>
+</button>
+</div>
+</div>
+<!-- Demo Canvas Container -->
+<div class="pt-5 space-y-5">
+<!-- Balance & Allowance Metric Surface -->
+<div class="bg-[#FCF9F8] rounded-[22px] border border-[#E8E8EA] p-5">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-semibold uppercase tracking-wider text-outline">Remaining Monthly Budget</span>
+<span class="text-[11px] font-semibold text-primary-container px-2 py-0.5 rounded-full bg-[#F1EAFF]" id="hero-progress-label">68.8% Available</span>
+</div>
+<div class="flex items-baseline gap-1.5 mt-2">
+<span class="text-[40px] sm:text-[44px] font-bold tracking-tight text-on-surface tabular-nums transition-colors duration-300" id="hero-balance">1,240.00</span>
+<span class="text-body-lg font-semibold text-on-surface-variant">DT</span>
+<span class="text-xs text-outline ml-1 font-normal">left for October</span>
+</div>
+<!-- Hairline Progress Bar -->
+<div class="w-full bg-[#E8E8EA] h-2 rounded-full overflow-hidden flex mt-3">
+<div class="bg-primary-container h-full rounded-full transition-all duration-700 ease-out" id="hero-progress-bar" style="width: 68.8%;"></div>
+</div>
+<!-- Micro Metrics Row -->
+<div class="grid grid-cols-2 gap-3 mt-4 pt-3.5 border-t border-[#E8E8EA]/60">
+<div>
+<span class="text-[11px] text-outline block">Today's spend</span>
+<span class="text-sm font-semibold text-on-surface tabular-nums transition-all" id="hero-today-spend">18.50 DT</span>
+</div>
+<div class="text-right">
+<span class="text-[11px] text-outline block">Daily allowance</span>
+<span class="text-sm font-semibold text-tertiary-container tabular-nums">62.00 DT</span>
+</div>
+</div>
+</div>
+<!-- Active Entry Bar / Prompt State (Transforms between States) -->
+<div class="transition-all duration-300" id="hero-action-container">
+<!-- State 1 Trigger Button -->
+<div class="flex items-center justify-between bg-white border border-[#E8E8EA] rounded-[18px] p-3 hover:border-primary-container/40 transition cursor-pointer hidden" id="hero-state-1-view" onclick="setHeroState(2)">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-container text-white flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</div>
+<div>
+<p class="text-sm font-medium text-on-surface">Record new expense</p>
+<p class="text-[11px] text-outline">Click to test instant capture</p>
+</div>
+</div>
+<button class="bg-[#F6F3F2] text-on-surface text-xs font-semibold px-3 py-1.5 rounded-xl hover:bg-primary-container hover:text-white transition">
+          + Add expense
+        </button>
+</div>
+<!-- State 2 Active Entry Form -->
+<div class="bg-[#FFFFFF] border-2 border-primary-container rounded-[20px] p-4 space-y-3.5 shadow-sm" id="hero-state-2-view">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-semibold uppercase tracking-wider text-primary-container flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-ping"></span>
+            Instant Capture
+          </span>
+<span class="text-[11px] text-outline">Press Save or Wait</span>
+</div>
+<div class="flex items-center justify-between gap-3">
+<div class="flex-1 bg-[#FCF9F8] rounded-[14px] px-3.5 py-2 border border-[#E8E8EA]">
+<span class="text-[10px] text-outline block">Amount</span>
+<div class="text-xl font-bold text-on-surface tabular-nums">12.50 <span class="text-xs font-normal text-outline">DT</span></div>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-3 py-2 rounded-[14px] bg-[#F1EAFF] border border-primary-container/30 text-primary-container font-semibold text-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">restaurant</span> Food
+            </span>
+</div>
+<button class="bg-primary-container text-white text-xs font-semibold px-4 py-3 rounded-[14px] hover:bg-secondary active:scale-95 transition shadow-sm" onclick="setHeroState(3)">
+            Save expense
+          </button>
+</div>
+</div>
+<!-- State 3 Saved Confirmation Pill -->
+<div class="bg-[#F1EAFF] border border-primary-container/30 rounded-[18px] p-3.5 flex items-center justify-between hidden" id="hero-state-3-view">
+<div class="flex items-center gap-2.5">
+<span class="w-7 h-7 rounded-full bg-primary-container text-white flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</span>
+<span class="text-sm font-semibold text-on-surface">12.50 DT added · Food</span>
+</div>
+<span class="text-[11px] font-medium text-primary-container bg-white px-2.5 py-1 rounded-full border border-primary-container/20">Updated in 0.4s</span>
+</div>
+</div>
+<!-- Live Ledger Activity List -->
+<div>
+<div class="flex items-center justify-between px-1 mb-2">
+<span class="text-[11px] font-semibold uppercase tracking-wider text-outline">Today's Transactions</span>
+<button class="text-[11px] text-primary-container font-medium hover:underline flex items-center gap-0.5" onclick="resetHeroDemo()">
+<span class="material-symbols-outlined text-[14px]">refresh</span> Reset
+        </button>
+</div>
+<div class="space-y-2" id="hero-tx-list">
+<!-- Dynamic New Item (Inserted on State 3) -->
+<div class="bg-[#FFFFFF] border-2 border-primary-container/40 p-3 rounded-[16px] flex items-center justify-between shadow-sm transition-all duration-300 hidden" id="tx-new-item">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-[10px] bg-[#F1EAFF] text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[17px]">restaurant</span>
+</div>
+<div>
+<p class="text-[13px] font-semibold text-on-surface leading-tight">Food</p>
+<span class="text-[10px] text-primary-container font-medium">Just now · Instant Record</span>
+</div>
+</div>
+<span class="text-[13px] font-bold text-on-surface tabular-nums">-12.50 DT</span>
+</div>
+<!-- Initial Transactions -->
+<div class="bg-[#FCF9F8] p-3 rounded-[16px] border border-[#E8E8EA] flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-[10px] bg-white flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[16px]">restaurant</span>
+</div>
+<div>
+<p class="text-[13px] font-medium text-on-surface leading-tight">Lunch</p>
+<span class="text-[10px] text-outline">1:15 PM · Food</span>
+</div>
+</div>
+<span class="text-[13px] font-semibold text-on-surface tabular-nums">-12.00 DT</span>
+</div>
+<div class="bg-[#FCF9F8] p-3 rounded-[16px] border border-[#E8E8EA] flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-[10px] bg-white flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[16px]">local_taxi</span>
+</div>
+<div>
+<p class="text-[13px] font-medium text-on-surface leading-tight">Taxi</p>
+<span class="text-[10px] text-outline">8:40 AM · Transport</span>
+</div>
+</div>
+<span class="text-[13px] font-semibold text-on-surface tabular-nums">-8.50 DT</span>
+</div>
+<div class="bg-[#FCF9F8] p-3 rounded-[16px] border border-[#E8E8EA] flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-[10px] bg-white flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[16px]">shopping_cart</span>
+</div>
+<div>
+<p class="text-[13px] font-medium text-on-surface leading-tight">Groceries</p>
+<span class="text-[10px] text-outline">Yesterday · Essentials</span>
+</div>
+</div>
+<span class="text-[13px] font-semibold text-on-surface tabular-nums">-42.00 DT</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Sequential Interactive Steps (Open. Record. Done.) -->
+<section class="py-20 bg-[#F6F3F2] border-y border-[#E8E8EA]" id="how-it-works">
+<div class="max-w-[1200px] mx-auto px-6">
+<div class="max-w-2xl mb-12">
+<h2 class="text-headline-lg font-headline-lg text-on-surface tracking-tight">Open. Record. Done.</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant mt-2">
+            Three steps are enough to keep your spending under control.
+          </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="steps-container">
+<!-- Step 1 -->
+<div class="hairline-card rounded-[24px] p-7 transition-all duration-300 cursor-default step-active" id="step-card-1" onmouseenter="activateStep(1)">
+<span class="step-num text-primary-container font-semibold text-headline-sm font-headline-sm tabular-nums block mb-4 transition-all duration-300">01</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">Open</h3>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+              Open Kinetic Minimal Ledger directly from your Home Screen or Lock Screen widget.
+            </p>
+</div>
+<!-- Step 2 -->
+<div class="hairline-card rounded-[24px] p-7 transition-all duration-300 cursor-default" id="step-card-2" onmouseenter="activateStep(2)">
+<span class="step-num text-outline font-semibold text-headline-sm font-headline-sm tabular-nums block mb-4 transition-all duration-300">02</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">Record</h3>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+              Enter the amount and category. No forms, no tagging, no friction.
+            </p>
+</div>
+<!-- Step 3 -->
+<div class="hairline-card rounded-[24px] p-7 transition-all duration-300 cursor-default" id="step-card-3" onmouseenter="activateStep(3)">
+<span class="step-num text-outline font-semibold text-headline-sm font-headline-sm tabular-nums block mb-4 transition-all duration-300">03</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">Done</h3>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+              Your budget updates instantly. Close the app and go about your day.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Editorial Continuous Product Surface (Transforms across feature states) -->
+<section class="py-24 max-w-[1200px] mx-auto px-6" id="features">
+<div class="max-w-2xl mb-14">
+<div class="inline-block text-[12px] font-semibold text-primary-container tracking-wider uppercase mb-2">System Discipline</div>
+<h2 class="text-display-md-mobile md:text-display-md font-display-md text-on-surface tracking-tight">
+          Everything you need. Nothing you don't.
+        </h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant mt-3">
+          Kinetic Minimal Ledger focuses on the few things that make everyday money tracking useful.
+        </p>
+</div>
+<!-- Asymmetric Editorial Layout: Interactive State Switcher + Dynamic Living Canvas -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Navigation Pills / Descriptors -->
+<div class="lg:col-span-5 space-y-4">
+<!-- Tab 1 -->
+<div class="cursor-pointer p-6 rounded-[22px] border-2 border-primary-container bg-white shadow-sm transition-all duration-200" id="feat-btn-capture" onclick="switchFeatureState('capture')">
+<div class="flex items-center gap-3">
+<span class="w-9 h-9 rounded-[12px] bg-[#F1EAFF] text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-semibold">Instant expense capture</h3>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mt-3 leading-relaxed">
+        Enter an amount, choose a category, and save. No complicated forms or deep hierarchies.
+      </p>
+</div>
+<!-- Tab 2 -->
+<div class="cursor-pointer p-6 rounded-[22px] border border-[#E8E8EA] bg-[#FCF9F8] hover:bg-white transition-all duration-200" id="feat-btn-balance" onclick="switchFeatureState('balance')">
+<div class="flex items-center gap-3">
+<span class="w-9 h-9 rounded-[12px] bg-[#F6F3F2] text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">pie_chart</span>
+</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-semibold">Know what you have left</h3>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mt-3 leading-relaxed">
+        See your remaining monthly budget and today's spending allowance without digging through charts.
+      </p>
+</div>
+<!-- Tab 3 -->
+<div class="cursor-pointer p-6 rounded-[22px] border border-[#E8E8EA] bg-[#FCF9F8] hover:bg-white transition-all duration-200" id="feat-btn-insights" onclick="switchFeatureState('insights')">
+<div class="flex items-center gap-3">
+<span class="w-9 h-9 rounded-[12px] bg-[#F6F3F2] text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">equalizer</span>
+</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-semibold">Insights without the noise</h3>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mt-3 leading-relaxed">
+        Understand where your money went with simple summaries instead of complicated financial dashboards.
+      </p>
+</div>
+</div>
+<!-- Right Continuous Native Surface Display -->
+<div class="lg:col-span-7">
+<div class="hairline-card rounded-[28px] p-7 md:p-9 min-h-[420px] flex flex-col justify-between">
+<!-- Top Surface Indicator -->
+<div class="flex items-center justify-between border-b border-[#F6F3F2] pb-4 mb-6">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="text-xs font-semibold uppercase tracking-wider text-outline" id="feat-indicator-text">State A: Instant Capture Preview</span>
+</div>
+<span class="text-xs text-outline tabular-nums">Real-time local render</span>
+</div>
+<!-- Surface Container with Animated States -->
+<div class="flex-1 flex flex-col justify-center">
+<!-- State A: Capture Content -->
+<div class="space-y-4" id="feat-canvas-capture">
+<div class="bg-[#FCF9F8] rounded-[22px] p-6 border border-[#E8E8EA]">
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-semibold text-outline uppercase tracking-wider">Quick Record</span>
+<span class="text-xs text-primary-container font-medium bg-[#F1EAFF] px-2.5 py-0.5 rounded-full">Keyboardless entry</span>
+</div>
+<div class="bg-white rounded-[18px] border border-[#E8E8EA] p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<span class="text-[11px] text-outline block">Expense Amount</span>
+<span class="text-3xl font-bold text-on-surface tabular-nums">12.50 <span class="text-lg font-normal text-on-surface-variant">DT</span></span>
+</div>
+<div class="flex items-center gap-3">
+<span class="rounded-full bg-[#F6F3F2] border border-[#E8E8EA] text-on-surface text-xs font-medium px-3.5 py-2 flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span> Food
+                </span>
+<button class="bg-primary-container text-white text-xs font-semibold rounded-[14px] px-5 py-2.5 hover:bg-secondary transition active:scale-95 shadow-sm">
+                  Save
+                </button>
+</div>
+</div>
+</div>
+<p class="text-xs text-outline text-center">Tapping any category logs the expense with exact timestamp in under a second.</p>
+</div>
+<!-- State B: Balance Content -->
+<div class="hidden space-y-4" id="feat-canvas-balance">
+<div class="bg-[#FCF9F8] rounded-[22px] p-6 border border-[#E8E8EA]">
+<div class="flex items-baseline justify-between mb-2">
+<span class="text-xs font-semibold text-outline uppercase tracking-wider">Current Month</span>
+<span class="text-xs font-semibold text-primary-container bg-[#F1EAFF] px-2.5 py-0.5 rounded-full">68% Available</span>
+</div>
+<div class="text-4xl font-bold text-on-surface tabular-nums tracking-tight mb-3">
+              1,240 DT <span class="text-base font-normal text-on-surface-variant">left</span>
+</div>
+<div class="w-full bg-[#E8E8EA] h-3 rounded-full overflow-hidden flex mb-4">
+<div class="bg-primary-container h-full rounded-full" style="width: 68%;"></div>
+</div>
+<div class="grid grid-cols-2 gap-3 pt-3 border-t border-[#E8E8EA] text-xs tabular-nums">
+<div>
+<span class="text-outline block">Total Monthly Budget</span>
+<span class="font-semibold text-on-surface text-sm">1,800 DT</span>
+</div>
+<div class="text-right">
+<span class="text-outline block">Spent to date</span>
+<span class="font-semibold text-on-surface text-sm">560 DT</span>
+</div>
+</div>
+</div>
+<p class="text-xs text-outline text-center">Your daily allowance automatically recalculates based on remaining days.</p>
+</div>
+<!-- State C: Insights Content -->
+<div class="hidden space-y-4" id="feat-canvas-insights">
+<div class="bg-[#FCF9F8] rounded-[22px] p-6 border border-[#E8E8EA] space-y-4">
+<div class="flex items-center justify-between pb-1">
+<span class="text-xs font-semibold uppercase tracking-wider text-outline">Category Distribution</span>
+<span class="text-xs font-medium text-outline tabular-nums">October 2026</span>
+</div>
+<div class="space-y-3">
+<div>
+<div class="flex justify-between text-xs font-medium mb-1.5">
+<span class="text-on-surface font-semibold">Food</span>
+<span class="tabular-nums text-on-surface-variant">320 DT · 50%</span>
+</div>
+<div class="w-full bg-[#E8E8EA] h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 50%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs font-medium mb-1.5">
+<span class="text-on-surface font-semibold">Transport</span>
+<span class="tabular-nums text-on-surface-variant">140 DT · 28%</span>
+</div>
+<div class="w-full bg-[#E8E8EA] h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container/80 h-full rounded-full" style="width: 28%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs font-medium mb-1.5">
+<span class="text-on-surface font-semibold">Shopping</span>
+<span class="tabular-nums text-on-surface-variant">95 DT · 18%</span>
+</div>
+<div class="w-full bg-[#E8E8EA] h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container/60 h-full rounded-full" style="width: 18%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs font-medium mb-1.5">
+<span class="text-on-surface font-semibold">Bills</span>
+<span class="tabular-nums text-on-surface-variant">80 DT · 14%</span>
+</div>
+<div class="w-full bg-[#E8E8EA] h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container/40 h-full rounded-full" style="width: 14%;"></div>
+</div>
+</div>
+</div>
+</div>
+<p class="text-xs text-outline text-center">Clean proportional summaries that require zero financial literacy to digest.</p>
+</div>
+</div>
+<!-- Quick Interactive Switcher Footer -->
+<div class="flex justify-center gap-2 pt-6 border-t border-[#F6F3F2]">
+<button class="text-xs px-3 py-1 rounded-full text-outline hover:text-on-surface" onclick="switchFeatureState('capture')">1. Capture</button>
+<span class="text-outline">·</span>
+<button class="text-xs px-3 py-1 rounded-full text-outline hover:text-on-surface" onclick="switchFeatureState('balance')">2. Balance</button>
+<span class="text-outline">·</span>
+<button class="text-xs px-3 py-1 rounded-full text-outline hover:text-on-surface" onclick="switchFeatureState('insights')">3. Insights</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Budget Visualization Section (One number matters most) with Live Tick -->
+<section class="py-20 bg-white border-y border-[#E8E8EA]">
+<div class="max-w-[800px] mx-auto px-6 text-center">
+<span class="text-xs font-semibold uppercase tracking-widest text-primary-container mb-3 inline-block">Absolute Simplicity</span>
+<h2 class="text-display-md font-display-md text-on-surface tracking-tight mb-4">One number matters most.</h2>
+<!-- Large Focal Stat with Seamless State Continuity -->
+<div class="py-8">
+<div class="flex items-baseline justify-center gap-2">
+<div class="text-6xl md:text-7xl font-bold tracking-tight text-on-surface tabular-nums transition-all duration-500" id="focal-stat-number">
+    1,240.00
+  </div>
+<span class="text-4xl font-normal text-on-surface-variant">DT</span>
+</div>
+<p class="text-headline-sm font-headline-sm text-outline mt-1 font-medium">left this month</p>
+<!-- Monthly Progress Visual -->
+<div class="max-w-md mx-auto mt-8">
+<div class="w-full bg-[#F0EDEC] h-3 rounded-full overflow-hidden p-0.5 border border-[#E8E8EA]">
+<div class="bg-primary-container h-full rounded-full transition-all duration-700 ease-out" id="focal-progress-bar" style="width: 68.8%;"></div>
+</div>
+<div class="flex justify-between items-center text-xs text-outline mt-3 tabular-nums">
+<span class="">Day 19 of 31</span>
+<span id="focal-allowance-label" class="">62.00 DT daily allowance</span>
+</div>
+</div>
+<!-- Interactive simulation toggle for visitors -->
+<div class="mt-6 flex justify-center items-center gap-3">
+<button class="text-xs bg-[#F6F3F2] border border-[#E8E8EA] hover:border-primary-container px-3.5 py-1.5 rounded-full text-on-surface transition flex items-center gap-1.5 font-medium" onclick="toggleFocalStat()">
+<span class="material-symbols-outlined text-[15px] text-primary-container">sync_alt</span>
+    Toggle recent transaction (<span id="focal-toggle-label" class="">-12.50 DT</span>)
+  </button>
+</div>
+</div>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-xl mx-auto leading-relaxed mt-4">
+          No spreadsheet required. No complicated financial dashboard. Just a clear answer to the question: <span class="italic">"How much do I have left?"</span>
+</p>
+</div>
+</section>
+<!-- Section 5: Made for the iPhone (Standalone Native iOS UI Surfaces, NO Mockups) -->
+<section class="py-24 max-w-[1200px] mx-auto px-6">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<h2 class="text-display-md font-display-md text-on-surface tracking-tight">Made for the iPhone.</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant mt-2">
+          Designed with deep respect for Apple Human Interface Guidelines and modern iOS features.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Native UI Surface 1: Interactive Widget Preview -->
+<div class="hairline-card rounded-[24px] p-6 text-left flex flex-col justify-between h-[300px] hover:border-primary-container/40 transition">
+<div>
+<div class="w-10 h-10 rounded-[12px] bg-[#F6F3F2] flex items-center justify-center text-on-surface mb-4">
+<span class="material-symbols-outlined text-[20px]">widgets</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">Widgets</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+              See your budget without opening the app directly on your Lock or Home Screen.
+            </p>
+</div>
+<!-- Standalone Apple Native Medium Widget Card -->
+<div class="bg-[#FCF9F8] border border-[#E8E8EA] rounded-[18px] p-3.5 space-y-2">
+<div class="flex items-center justify-between text-[11px] text-outline">
+<span class="font-medium text-on-surface flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> Kinetic
+    </span>
+<span class="">October</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="text-xl font-bold text-on-surface tabular-nums">1,227.50 DT</span>
+<span class="text-[10px] text-primary-container font-semibold">68% Left</span>
+</div>
+<div class="w-full bg-[#E8E8EA] h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 68%;"></div>
+</div>
+</div>
+</div>
+<!-- Native UI Surface 2: Siri & Shortcuts Card -->
+<div class="hairline-card rounded-[24px] p-6 text-left flex flex-col justify-between h-[300px] hover:border-primary-container/40 transition">
+<div>
+<div class="w-10 h-10 rounded-[12px] bg-[#F6F3F2] flex items-center justify-center text-on-surface mb-4">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">Siri &amp; Shortcuts</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+              Hands-free recording with natural language recognition.
+            </p>
+</div>
+<!-- Standalone Siri Prompt & Confirmation Bubble -->
+<div class="space-y-2">
+<div class="bg-[#FCF9F8] border border-[#E8E8EA] rounded-[14px] p-2.5 text-xs text-on-surface font-medium italic flex items-center gap-2">
+<span class="material-symbols-outlined text-[15px] text-outline">mic</span>
+    "Add 12 dinars for lunch"
+  </div>
+<div class="bg-white border border-[#E8E8EA] rounded-[14px] p-2 flex items-center justify-between text-xs">
+<span class="text-on-surface font-medium text-[11px] flex items-center gap-1.5">
+<span class="material-symbols-outlined text-tertiary-container text-[14px]">check_circle</span>
+      Food · 12.00 DT
+    </span>
+<span class="text-[10px] text-outline">Logged</span>
+</div>
+</div>
+</div>
+<!-- Native UI Surface 3: Dynamic Island Pill -->
+<div class="hairline-card rounded-[24px] p-6 text-left flex flex-col justify-between h-[300px] hover:border-primary-container/40 transition">
+<div>
+<div class="w-10 h-10 rounded-[12px] bg-[#F6F3F2] flex items-center justify-center text-on-surface mb-4">
+<span class="material-symbols-outlined text-[20px]">notifications_active</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">Dynamic Island</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+              Keep today's remaining allowance visible when useful with Live Activities.
+            </p>
+</div>
+<!-- Standalone Standalone Dynamic Island Pill Surface -->
+<div class="bg-black text-white rounded-full px-3.5 py-2.5 text-[11px] flex items-center justify-between shadow-md">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-medium text-[10px] text-white/90">Kinetic Live</span>
+</div>
+<span class="tabular-nums font-semibold text-[11px] text-white">62.00 DT left today</span>
+</div>
+</div>
+<!-- Native UI Surface 4: Quick Actions Surface -->
+<div class="hairline-card rounded-[24px] p-6 text-left flex flex-col justify-between h-[300px] hover:border-primary-container/40 transition">
+<div>
+<div class="w-10 h-10 rounded-[12px] bg-[#F6F3F2] flex items-center justify-center text-on-surface mb-4">
+<span class="material-symbols-outlined text-[20px]">touch_app</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">Quick Actions</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+              Haptic deep press on the app icon to log common frequent expenses in one tap.
+            </p>
+</div>
+<!-- Standalone iOS Haptic Context Menu Preview -->
+<div class="bg-white border border-[#E8E8EA] rounded-[16px] p-1.5 shadow-sm space-y-1">
+<div class="px-2.5 py-1.5 rounded-[10px] bg-[#F6F3F2] flex items-center justify-between text-xs font-medium text-on-surface">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[15px] text-primary-container">coffee</span>
+<span class="">Record Coffee (4 DT)</span>
+</div>
+<span class="material-symbols-outlined text-[13px] text-outline">chevron_right</span>
+</div>
+<div class="px-2.5 py-1.5 rounded-[10px] flex items-center justify-between text-xs font-medium text-on-surface hover:bg-[#F6F3F2] transition">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[15px] text-outline">directions_car</span>
+<span class="">Record Taxi</span>
+</div>
+<span class="material-symbols-outlined text-[13px] text-outline">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: Privacy Section (Local-first & Apple-native ethics) -->
+<section class="py-20 bg-[#F6F3F2] border-y border-[#E8E8EA]" id="privacy">
+<div class="max-w-[1200px] mx-auto px-6">
+<div class="max-w-2xl mb-12">
+<span class="text-xs font-semibold uppercase tracking-widest text-primary-container mb-2 block">Apple-native Ethics</span>
+<h2 class="text-headline-lg font-headline-lg text-on-surface tracking-tight">Your money is personal.</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant mt-2">
+            Kinetic Minimal Ledger is designed around a local-first experience, clear data ownership, and minimal data collection.
+          </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="hairline-card rounded-[24px] p-7">
+<div class="w-10 h-10 rounded-[12px] bg-[#FCF9F8] border border-[#E8E8EA] flex items-center justify-center text-on-surface mb-4">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">Local first</h3>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+              Your everyday activity is designed to remain available on your device, fully functional offline.
+            </p>
+</div>
+<div class="hairline-card rounded-[24px] p-7">
+<div class="w-10 h-10 rounded-[12px] bg-[#FCF9F8] border border-[#E8E8EA] flex items-center justify-center text-on-surface mb-4">
+<span class="material-symbols-outlined text-[20px]">visibility_off</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">Minimal collection</h3>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+              We collect only what the product needs to function. No tracking pixels or advertising brokers.
+            </p>
+</div>
+<div class="hairline-card rounded-[24px] p-7">
+<div class="w-10 h-10 rounded-[12px] bg-[#FCF9F8] border border-[#E8E8EA] flex items-center justify-center text-on-surface mb-4">
+<span class="material-symbols-outlined text-[20px]">database</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-2">Your data</h3>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+              Provide clear controls for instant JSON/CSV export, private iCloud sync, and permanent deletion.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Beta Waitlist Section (With Smooth In-Place State Transition) -->
+<section class="py-24 max-w-[1200px] mx-auto px-6" id="waitlist">
+<div class="bg-[#F0EDEC] border border-[#E8E8EA] rounded-[28px] p-8 md:p-14 text-center max-w-[840px] mx-auto relative overflow-hidden">
+<span class="inline-block px-3 py-1 bg-white border border-[#E8E8EA] rounded-full text-xs font-semibold text-primary-container uppercase tracking-wider mb-4">
+          Private Beta
+        </span>
+<h2 class="text-display-md-mobile md:text-display-md font-display-md text-on-surface tracking-tight max-w-lg mx-auto">Be one of the first to use Numo.</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant mt-4 max-w-md mx-auto">
+          Kinetic Minimal Ledger is currently in private beta. Join the waitlist and get early access when the app is ready.
+        </p>
+<!-- Waitlist Form Container -->
+<div class="mt-8 max-w-md mx-auto" id="waitlist-container">
+<form class="flex flex-col sm:flex-row gap-3 items-center" id="waitlist-form" onsubmit="handleWaitlist(event)">
+<input class="w-full bg-white rounded-full px-6 py-4 border border-[#E8E8EA] text-on-surface placeholder:text-outline focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 text-body-md font-body-md transition" id="waitlist-email" placeholder="Your email address" required="" type="email">
+<button class="w-full sm:w-auto shrink-0 bg-primary-container text-white rounded-full px-8 py-4 font-label-lg text-label-lg hover:bg-secondary active:scale-[0.98] transition apple-shadow" type="submit">
+              Join the beta
+            </button>
+</form>
+<!-- Quiet Success State (Smooth in-place replacement) -->
+<div class="hidden py-6 px-6 bg-white border border-[#E8E8EA] rounded-[24px] text-center transition-all duration-300 shadow-sm" id="waitlist-success">
+<div class="w-10 h-10 rounded-full bg-[#F1EAFF] text-primary-container flex items-center justify-center mx-auto mb-2.5">
+<span class="material-symbols-outlined text-[20px]">done</span>
+</div>
+<p class="font-semibold text-on-surface text-body-md">You're on the list.</p>
+<p class="text-body-sm text-outline mt-1">We'll email you when your beta access is ready.</p>
+</div>
+<p class="text-xs text-outline mt-4" id="waitlist-disclaimer">
+            No spam. Only beta access and important product updates.
+          </p>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="py-16 text-center max-w-[1200px] mx-auto px-6 border-t border-[#E8E8EA]">
+<p class="text-xs font-semibold uppercase tracking-widest text-primary-container mb-3">PRIVATE BETA</p>
+<h2 class="text-display-md-mobile md:text-display-md font-display-md text-on-surface tracking-tight mb-4">
+        Make tracking your spending effortless.
+      </h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-lg mx-auto mb-8">
+        Built for iPhone with radical clarity and quiet confidence.
+      </p>
+<div class="flex justify-center">
+<a class="bg-primary-container text-white rounded-[18px] px-8 py-3.5 font-label-lg text-label-lg hover:bg-secondary transition active:scale-[0.98]" href="#waitlist">
+          Join the beta
+        </a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/30">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-[1200px] mx-auto px-6 py-12 gap-6">
+<!-- Wordmark & Copyright -->
+<div class="text-center md:text-left">
+<a class="text-headline-sm font-headline-sm font-semibold text-on-surface tracking-tight" href="#">Numo</a>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">© 2025 Numo. Radical clarity for personal finance. All rights reserved.</p>
+</div>
+<!-- Links -->
+<div class="flex items-center space-x-6 text-label-md font-label-md">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-150" href="#privacy">Privacy</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-150" href="#">Terms</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-150" href="#">Security</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-150" href="#">System Status</a>
+</div>
+</div>
+</footer>
+<!-- Interactive Scripts: Dynamic Living Product Demonstrations -->
+<script>
+  // 1. Dynamic compact header elevation on scroll
+  window.addEventListener('scroll', () => {
+    const header = document.getElementById('site-header');
+    if (window.scrollY > 20) {
+      header.classList.add('shadow-sm', 'bg-white/90');
+      header.classList.remove('bg-surface/80');
+    } else {
+      header.classList.remove('shadow-sm', 'bg-white/90');
+      header.classList.add('bg-surface/80');
+    }
+  });
+
+  // 2. Hero Interactive Living Product Demonstration
+  let heroState = 1;
+  let heroAutoPlay = true;
+  let heroTimer = null;
+
+  function setHeroState(state) {
+    heroState = state;
+    const view1 = document.getElementById('hero-state-1-view');
+    const view2 = document.getElementById('hero-state-2-view');
+    const view3 = document.getElementById('hero-state-3-view');
+    const txNew = document.getElementById('tx-new-item');
+    const balance = document.getElementById('hero-balance');
+    const spend = document.getElementById('hero-today-spend');
+    const progBar = document.getElementById('hero-progress-bar');
+    const progLabel = document.getElementById('hero-progress-label');
+
+    // Update switcher tab styling
+    [1, 2, 3].forEach(n => {
+      const btn = document.getElementById(`btn-state-${n}`);
+      if (btn) {
+        if (n === state) {
+          btn.className = "px-2.5 py-1 rounded-full transition-all bg-white text-on-surface shadow-sm font-semibold";
+        } else {
+          btn.className = "px-2.5 py-1 rounded-full text-outline hover:text-on-surface transition-all";
+        }
+      }
+    });
+
+    if (state === 1) {
+      // Ready State
+      view1.classList.remove('hidden');
+      view2.classList.add('hidden');
+      view3.classList.add('hidden');
+      txNew.classList.add('hidden');
+
+      balance.innerText = "1,240.00";
+      balance.classList.remove('text-primary-container');
+      spend.innerText = "18.50 DT";
+      progBar.style.width = "68.8%";
+      progLabel.innerText = "68.8% Available";
+    } else if (state === 2) {
+      // Active Entry State
+      view1.classList.add('hidden');
+      view2.classList.remove('hidden');
+      view3.classList.add('hidden');
+      txNew.classList.add('hidden');
+
+      balance.innerText = "1,240.00";
+      balance.classList.remove('text-primary-container');
+      spend.innerText = "18.50 DT";
+      progBar.style.width = "68.8%";
+      progLabel.innerText = "68.8% Available";
+    } else if (state === 3) {
+      // Saved & Updated State (Smooth animated tick)
+      view1.classList.add('hidden');
+      view2.classList.add('hidden');
+      view3.classList.remove('hidden');
+      txNew.classList.remove('hidden');
+
+      balance.innerText = "1,227.50";
+      balance.classList.add('text-primary-container');
+      spend.innerText = "31.00 DT";
+      progBar.style.width = "68.1%";
+      progLabel.innerText = "68.1% Available";
+    }
+  }
+
+  function resetHeroDemo() {
+    setHeroState(1);
+  }
+
+  function toggleHeroAutoPlay() {
+    heroAutoPlay = !heroAutoPlay;
+    const btn = document.getElementById('btn-hero-autoplay');
+    btn.style.color = heroAutoPlay ? '#532bdb' : '#797587';
+  }
+
+  // Smooth continuous auto-cycling (authentic 2.2s timing per state)
+  function initHeroLoop() {
+    heroTimer = setInterval(() => {
+      if (!heroAutoPlay) return;
+      if (heroState === 1) {
+        setHeroState(2);
+      } else if (heroState === 2) {
+        setHeroState(3);
+      } else {
+        setHeroState(1);
+      }
+    }, 2800);
+  }
+  initHeroLoop();
+
+  // 3. Section 2: Sequential Step Highlighting on hover or scroll
+  function activateStep(stepNum) {
+    [1, 2, 3].forEach(num => {
+      const card = document.getElementById(`step-card-${num}`);
+      if (num === stepNum) {
+        card.classList.add('step-active');
+        card.querySelector('.step-num').classList.add('text-primary-container');
+        card.querySelector('.step-num').classList.remove('text-outline');
+      } else {
+        card.classList.remove('step-active');
+        card.querySelector('.step-num').classList.remove('text-primary-container');
+        card.querySelector('.step-num').classList.add('text-outline');
+      }
+    });
+  }
+
+  // 4. Section 3: Feature Continuous Surface Switcher
+  function switchFeatureState(stateKey) {
+    const states = ['capture', 'balance', 'insights'];
+    states.forEach(key => {
+      const btn = document.getElementById(`feat-btn-${key}`);
+      const canvas = document.getElementById(`feat-canvas-${key}`);
+
+      if (key === stateKey) {
+        btn.classList.add('border-primary-container', 'bg-white', 'shadow-sm');
+        btn.classList.remove('border-[#E8E8EA]', 'bg-[#FCF9F8]');
+        btn.querySelector('.w-9').classList.add('bg-[#F1EAFF]', 'text-primary-container');
+        btn.querySelector('.w-9').classList.remove('bg-[#F6F3F2]', 'text-on-surface');
+        canvas.classList.remove('hidden');
+      } else {
+        btn.classList.remove('border-primary-container', 'bg-white', 'shadow-sm');
+        btn.classList.add('border-[#E8E8EA]', 'bg-[#FCF9F8]');
+        btn.querySelector('.w-9').classList.remove('bg-[#F1EAFF]', 'text-primary-container');
+        btn.querySelector('.w-9').classList.add('bg-[#F6F3F2]', 'text-on-surface');
+        canvas.classList.add('hidden');
+      }
+    });
+
+    const indicator = document.getElementById('feat-indicator-text');
+    if (stateKey === 'capture') indicator.innerText = 'State A: Instant Capture Preview';
+    if (stateKey === 'balance') indicator.innerText = 'State B: Balance & Allowance Preview';
+    if (stateKey === 'insights') indicator.innerText = 'State C: Proportional Category Insights';
+  }
+
+  // 5. Section 4: One number matters most toggle simulator
+  let focalToggled = false;
+  function toggleFocalStat() {
+    focalToggled = !focalToggled;
+    const num = document.getElementById('focal-stat-number');
+    const bar = document.getElementById('focal-progress-bar');
+    const label = document.getElementById('focal-toggle-label');
+    const allowance = document.getElementById('focal-allowance-label');
+
+    if (focalToggled) {
+      num.innerText = "1,227.50";
+      num.classList.add('text-primary-container');
+      bar.style.width = "68.1%";
+      label.innerText = "+12.50 DT restored";
+      allowance.innerText = "61.60 DT daily allowance";
+    } else {
+      num.innerText = "1,240.00";
+      num.classList.remove('text-primary-container');
+      bar.style.width = "68.8%";
+      label.innerText = "-12.50 DT";
+      allowance.innerText = "62.00 DT daily allowance";
+    }
+  }
+
+  // 6. Section 6: Quiet In-Place Waitlist Form Handler
+  function handleWaitlist(event) {
+    event.preventDefault();
+    const form = document.getElementById('waitlist-form');
+    const success = document.getElementById('waitlist-success');
+    const disclaimer = document.getElementById('waitlist-disclaimer');
+    const email = document.getElementById('waitlist-email').value;
+
+    if (email && email.includes('@')) {
+      form.classList.add('hidden');
+      if (disclaimer) disclaimer.classList.add('hidden');
+      success.classList.remove('hidden');
+    }
+  }
+</script>
+
+
+</body></html>

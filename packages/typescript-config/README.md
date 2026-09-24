@@ -1,4 +1,4 @@
-# @repo/typescript-config
+# @numo/typescript-config
 
 Shared TypeScript configurations for consistent type checking across the monorepo.
 
@@ -36,7 +36,7 @@ Extend the configurations in your `tsconfig.json`:
 
 ```json
 {
-  "extends": "@repo/typescript-config/base.json",
+  "extends": "@numo/typescript-config/base.json",
   "compilerOptions": {
     "outDir": "./dist"
   }
@@ -47,7 +47,7 @@ Extend the configurations in your `tsconfig.json`:
 
 ```json
 {
-  "extends": "@repo/typescript-config/nextjs.json",
+  "extends": "@numo/typescript-config/nextjs.json",
   "compilerOptions": {
     "baseUrl": "."
   }
@@ -58,7 +58,7 @@ Extend the configurations in your `tsconfig.json`:
 
 ```json
 {
-  "extends": "@repo/typescript-config/node.json",
+  "extends": "@numo/typescript-config/node.json",
   "compilerOptions": {
     "outDir": "./dist"
   }
@@ -69,7 +69,7 @@ Extend the configurations in your `tsconfig.json`:
 
 ```json
 {
-  "extends": "@repo/typescript-config/react-library.json",
+  "extends": "@numo/typescript-config/react-library.json",
   "compilerOptions": {
     "outDir": "./dist"
   }
@@ -120,7 +120,7 @@ You can override any setting:
 
 ```json
 {
-  "extends": "@repo/typescript-config/base.json",
+  "extends": "@numo/typescript-config/base.json",
   "compilerOptions": {
     "strict": false,
     "noUnusedLocals": false

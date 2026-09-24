@@ -16,9 +16,9 @@ export const setupSwagger = (app: OpenAPIHono<Env>) => {
   app.doc('/openapi.json', {
     openapi: '3.1.0',
     info: {
-      title: 'Saas Boilerplate API',
+      title: 'Numo API',
       version: '1.0.0',
-      description: 'REST API powered by Hono, Supabase, and Prisma',
+      description: 'REST API powered by Hono, Supabase, and Prisma for Numo Personal Budget App',
     },
     servers: servers.length ? servers : undefined,
   })

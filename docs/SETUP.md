@@ -1,6 +1,6 @@
 # Setup Guide
 
-Complete guide for setting up and running the SaaS Boilerplate monorepo.
+Complete guide for setting up and running the Numo monorepo.
 
 ## 📋 Table of Contents
 
@@ -46,8 +46,8 @@ Before you begin, ensure you have the following installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
-cd saas-boilerplate-next-hono
+git clone https://github.com/Khalil-Bchir/numo.git
+cd numo
 ```
 
 ### 2. Install Dependencies
@@ -189,7 +189,7 @@ NEXT_PUBLIC_DEFAULT_SIGNUP_ROLE=USER
 ### 1. Generate Prisma Client
 
 ```bash
-pnpm --filter @repo/database db:generate
+pnpm --filter @numo/database db:generate
 ```
 
 This command:
@@ -201,7 +201,7 @@ This command:
 
 ```bash
 # Create and apply initial migration
-pnpm --filter @repo/database db:migrate:dev
+pnpm --filter @numo/database db:migrate:dev
 ```
 
 This will:
@@ -221,7 +221,7 @@ This will:
 Open Prisma Studio to view your database:
 
 ```bash
-pnpm --filter @repo/database db:studio
+pnpm --filter @numo/database db:studio
 ```
 
 This opens a web interface at `http://localhost:5555` where you can:
@@ -235,7 +235,7 @@ This opens a web interface at `http://localhost:5555` where you can:
 Seed the database with initial data:
 
 ```bash
-pnpm --filter @repo/database db:seed:dev
+pnpm --filter @numo/database db:seed:dev
 ```
 
 This runs the development seed script which may include:
@@ -353,10 +353,10 @@ Start apps individually:
 
 ```bash
 # Start API only
-pnpm --filter api dev
+pnpm --filter @numo/api dev
 
 # Start web only
-pnpm --filter web dev
+pnpm --filter @numo/web dev
 ```
 
 ### Production Build
@@ -368,18 +368,18 @@ Build for production:
 pnpm build
 
 # Build specific app
-pnpm --filter api build
-pnpm --filter web build
+pnpm --filter @numo/api build
+pnpm --filter @numo/web build
 ```
 
 ### Production Run
 
 ```bash
 # Start API
-pnpm --filter api start
+pnpm --filter @numo/api start
 
 # Start web (in another terminal)
-pnpm --filter web start
+pnpm --filter @numo/web start
 ```
 
 ## Development Workflow
@@ -393,18 +393,18 @@ pnpm --filter web start
 
 2. **Create Migration**
    ```bash
-   pnpm --filter @repo/database db:migrate:dev
+   pnpm --filter @numo/database db:migrate:dev
    ```
 
 3. **Regenerate Client**
    ```bash
-   pnpm --filter @repo/database db:generate
+   pnpm --filter @numo/database db:generate
    ```
 
 4. **Update Types**
    ```bash
    # Regenerate Prisma types (auto-generated)
-   pnpm --filter @repo/database db:generate
+   pnpm --filter @numo/database db:generate
    
    # Regenerate Supabase types (if schema changed)
    pnpm dlx supabase gen types typescript --project-id YOUR_PROJECT_ID > packages/types/src/types.ts
@@ -434,16 +434,16 @@ pnpm --filter web start
 
 ```bash
 # View database
-pnpm --filter @repo/database db:studio
+pnpm --filter @numo/database db:studio
 
 # Check migration status
-pnpm --filter @repo/database db:status:dev
+pnpm --filter @numo/database db:status:dev
 
 # Reset database (⚠️ drops all data)
-pnpm --filter @repo/database db:reset:dev
+pnpm --filter @numo/database db:reset:dev
 
 # Pull schema from database
-pnpm --filter @repo/database db:pull
+pnpm --filter @numo/database db:pull
 
 # Regenerate Supabase types after schema changes
 pnpm dlx supabase gen types typescript --project-id YOUR_PROJECT_ID > packages/types/src/types.ts
@@ -483,14 +483,14 @@ pnpm check-types
 1. Check migration SQL for syntax errors
 2. Verify database user has migration permissions
 3. Check for conflicting migrations
-4. Review migration history: `pnpm --filter @repo/database db:status:dev`
+4. Review migration history: `pnpm --filter @numo/database db:status:dev`
 
 ### Prisma Client Not Generated
 
 **Problem:** Types not available
 
 **Solutions:**
-1. Run: `pnpm --filter @repo/database db:generate`
+1. Run: `pnpm --filter @numo/database db:generate`
 2. Check `schema.prisma` for syntax errors
 3. Verify Prisma is installed: `pnpm list @prisma/client`
 
@@ -537,7 +537,7 @@ pnpm check-types
 **Problem:** TypeScript errors
 
 **Solutions:**
-1. Regenerate Prisma client: `pnpm --filter @repo/database db:generate`
+1. Regenerate Prisma client: `pnpm --filter @numo/database db:generate`
 2. Regenerate Supabase types: `pnpm dlx supabase gen types typescript --project-id YOUR_PROJECT_ID > packages/types/src/types.ts`
 3. Rebuild packages: `pnpm build`
 4. Check TypeScript version compatibility

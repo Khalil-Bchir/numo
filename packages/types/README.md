@@ -1,4 +1,4 @@
-# @repo/types
+# @numo/types
 
 Shared TypeScript types and constants used across the monorepo.
 
@@ -29,8 +29,8 @@ This package is automatically installed as a workspace dependency.
 ### Usage
 
 ```typescript
-import type { UserRole } from '@repo/types'
-import { Constants } from '@repo/types'
+import type { UserRole } from '@numo/types'
+import { Constants } from '@numo/types'
 
 // Use types
 const role: UserRole = 'USER'
@@ -46,7 +46,7 @@ const roles = Constants.public.Enums.UserRole
 Types generated from Prisma schema:
 
 ```typescript
-import type { Database } from '@repo/types'
+import type { Database } from '@numo/types'
 
 // Table types
 type User = Database['public']['Tables']['users']['Row']
@@ -60,7 +60,7 @@ type UserRole = Database['public']['Enums']['UserRole']
 Helper types for working with database types:
 
 ```typescript
-import type { Tables, TablesInsert, TablesUpdate, Enums } from '@repo/types'
+import type { Tables, TablesInsert, TablesUpdate, Enums } from '@numo/types'
 
 // Get table row type
 type User = Tables<'users'>
@@ -80,7 +80,7 @@ type UserRole = Enums<'UserRole'>
 ### User Roles
 
 ```typescript
-import { Constants } from '@repo/types'
+import { Constants } from '@numo/types'
 
 const roles = Constants.public.Enums.UserRole
 // ['USER', 'ADMIN', 'DEMO']
@@ -93,7 +93,7 @@ const roles = Constants.public.Enums.UserRole
 The `Database` type represents the complete database schema:
 
 ```typescript
-import type { Database } from '@repo/types'
+import type { Database } from '@numo/types'
 
 type UserTable = Database['public']['Tables']['users']
 type UserRow = UserTable['Row']
@@ -104,7 +104,7 @@ type UserUpdate = UserTable['Update']
 ### Enum Types
 
 ```typescript
-import type { Database } from '@repo/types'
+import type { Database } from '@numo/types'
 
 type UserRole = Database['public']['Enums']['UserRole']
 // 'USER' | 'ADMIN' | 'DEMO'
@@ -114,14 +114,14 @@ type UserRole = Database['public']['Enums']['UserRole']
 
 Database types are generated from the Prisma schema:
 
-1. Prisma schema is defined in `@repo/database`
+1. Prisma schema is defined in `@numo/database`
 2. Prisma generates TypeScript types
 3. Types are exported from this package
 
 To regenerate types:
 
 ```bash
-pnpm --filter @repo/database db:generate
+pnpm --filter @numo/database db:generate
 ```
 
 ## 🛠️ Development
@@ -142,10 +142,10 @@ pnpm --filter @repo/database db:generate
 
 ```bash
 # Build TypeScript
-pnpm --filter @repo/types build
+pnpm --filter @numo/types build
 
 # Watch mode
-pnpm --filter @repo/types dev
+pnpm --filter @numo/types dev
 ```
 
 ## 🔍 Type Checking
@@ -162,7 +162,7 @@ pnpm check-types
 ### In API Routes
 
 ```typescript
-import type { Database } from '@repo/types'
+import type { Database } from '@numo/types'
 
 type User = Database['public']['Tables']['users']['Row']
 
@@ -175,7 +175,7 @@ handler.get('/users', async (c) => {
 ### In Frontend
 
 ```typescript
-import type { UserRole } from '@repo/types'
+import type { UserRole } from '@numo/types'
 
 const role: UserRole = 'USER'
 ```
@@ -183,7 +183,7 @@ const role: UserRole = 'USER'
 ### With Constants
 
 ```typescript
-import { Constants } from '@repo/types'
+import { Constants } from '@numo/types'
 
 const isValidRole = (role: string) => {
   return Constants.public.Enums.UserRole.includes(role as any)

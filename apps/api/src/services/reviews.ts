@@ -1,4 +1,4 @@
-import type { PrismaClient } from "@repo/database";
+import type { PrismaClient } from "@numo/database";
 import type { CreateReviewBody } from "../schema/v1/reviews.schema.js";
 import type { AbstractServiceOptions } from "../types/services.js";
 

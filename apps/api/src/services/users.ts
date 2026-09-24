@@ -1,4 +1,4 @@
-import { PrismaClient } from '@repo/database';
+import { PrismaClient } from '@numo/database';
 
 import { AbstractServiceOptions } from '../types/services.js';
 import { getSupabaseServiceClient } from '../lib/supabase.js';

@@ -1,5 +1,5 @@
 {
-  "name": "@repo/database",
+  "name": "@numo/database",
   "version": "0.0.0",
   "type": "module",
   "main": "dist/index.js",
@@ -42,7 +42,7 @@
     "tsc-alias": "^1.8.16",
     "lodash": "^4.17.21",
     "prisma": "^6.19.0",
-    "@repo/typescript-config": "workspace:*",
+    "@numo/typescript-config": "workspace:*",
     "@types/bcryptjs": "^2.4.6",
     "@types/node": "^20.11.0",
     "tsx": "^4.7.0",

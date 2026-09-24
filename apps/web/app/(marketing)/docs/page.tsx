@@ -122,7 +122,7 @@ export default function DocsPage() {
         <code>packages/database/package.json</code> so SQL remains consistent and reviewable in pull requests.
       </p>
       <p>
-        Generated Prisma Client is imported from the <code>@repo/database</code> workspace package; do not commit
+        Generated Prisma Client is imported from the <code>@numo/database</code> workspace package; do not commit
         generated client output from <code>node_modules</code>.
       </p>
 

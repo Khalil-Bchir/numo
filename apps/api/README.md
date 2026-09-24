@@ -4,7 +4,7 @@ Production-ready REST API built with Hono.js, Supabase Auth, and Prisma ORM.
 
 ## 🎯 Overview
 
-This API provides a complete backend solution for the SaaS boilerplate, featuring:
+This API provides a complete backend solution for Numo, featuring:
 
 - **Fast & Lightweight** - Built on Hono.js for optimal performance
 - **Type-Safe** - Full TypeScript with Zod validation
@@ -106,13 +106,13 @@ ALLOWED_ORIGINS=http://localhost:3001
 
 ```bash
 # Generate Prisma client
-pnpm --filter @repo/database db:generate
+pnpm --filter @numo/database db:generate
 
 # Run migrations
-pnpm --filter @repo/database db:migrate:dev
+pnpm --filter @numo/database db:migrate:dev
 
 # (Optional) Seed database
-pnpm --filter @repo/database db:seed:dev
+pnpm --filter @numo/database db:seed:dev
 ```
 
 ### Development Server
@@ -323,7 +323,7 @@ Ensure all required environment variables are set:
 ### Running Migrations
 
 ```bash
-pnpm --filter @repo/database db:migrate:prod
+pnpm --filter @numo/database db:migrate:prod
 ```
 
 ### Starting Server

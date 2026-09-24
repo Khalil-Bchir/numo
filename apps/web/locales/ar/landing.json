@@ -1,8 +1,8 @@
 {
-  "landing_badge": "قالب SaaS",
+  "landing_badge": "Numo",
   "landing_title_main": "Next.js + Hono",
   "landing_title_highlight": "Starter",
-  "landing_description": "مونوريبو قابل لإعادة الاستخدام يتضمن المصادقة والتفويض وإدارة المستخدمين. مصمم لتطبيقات SaaS جاهزة للإنتاج.",
+  "landing_description": "سجّل مصاريفك في ثوانٍ. افهم أموالك بنظرة سريعة. مصمم ببساطة وأداء عالي لنظام iOS.",
   "landing_feature_auth_title": "المصادقة",
   "landing_feature_auth_desc": "تسجيل ودخول بالبريد وكلمة المرور، تجديد الجلسة، نسيت كلمة المرور، واختياريًا تسجيل الدخول بـ Google.",
   "landing_feature_authz_title": "التفويض",

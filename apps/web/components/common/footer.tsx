@@ -5,7 +5,7 @@ import { LayoutGrid, Github, ExternalLink } from "lucide-react"
 import { strings } from "@/lib/strings"
 import { SectionNavLink } from "@/components/common/section-nav-link"
 
-const GITHUB_REPO = "https://github.com/Khalil-Bchir/saas-boilerplate-next-hono"
+const GITHUB_REPO = "https://github.com/Khalil-Bchir/numo"
 
 const footerLinkClass =
   "text-sm text-muted-foreground transition-colors hover:text-foreground"

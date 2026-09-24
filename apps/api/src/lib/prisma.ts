@@ -1,6 +1,6 @@
-import { prisma } from '@repo/database'
+import { prisma } from '@numo/database'
 
 export const getPrismaClient = () => prisma
 
-export type { PrismaClient } from '@repo/database'
+export type { PrismaClient } from '@numo/database'
 

@@ -3,7 +3,7 @@
  */
 export const strings = {
   // App & nav
-  app_name: 'SaaS Boilerplate',
+  app_name: 'Numo',
   nav_home: 'Home',
   nav_intro: 'Intro',
   nav_features: 'Features',
@@ -22,17 +22,17 @@ export const strings = {
   footer_resources_blurb:
     'Configure environment variables, run database migrations from the workspace scripts, then start the web and API dev servers.',
   footer_tagline:
-    'Next.js and Hono monorepo with typed APIs, Prisma, and Supabase-ready auth—swap in your product and ship.',
+    'Numo personal budget monorepo with typed APIs, Prisma, and Supabase-ready auth.',
   footer_github: 'Source on GitHub',
   footer_rights_reserved: 'All rights reserved.',
   footer_reviews: 'Reviews',
 
   // Landing
-  landing_badge: 'SaaS Boilerplate',
+  landing_badge: 'Numo',
   landing_title_main: 'Next.js + Hono',
   landing_title_highlight: 'Starter',
   landing_description:
-    'A reusable monorepo with authentication, authorization, and authenticated user management. Built for production-ready SaaS apps.',
+    'Record spending in seconds. Understand your money at a glance. Built with native iOS simplicity and high performance.',
   landing_feature_auth_title: 'Authentication',
   landing_feature_auth_desc:
     'Email/password sign-up and login, session refresh, forgot password, and optional Google OAuth.',

@@ -1,5 +1,5 @@
 import { createRoute, z } from "@hono/zod-openapi";
-import { Constants } from "@repo/types";
+import { Constants } from "@numo/types";
 
 /**
  * Shape of the user profile returned by the API.

@@ -1,17 +1,17 @@
-# SaaS Boilerplate - Next.js + Hono Monorepo
+# Numo - Personal Budget App Monorepo
 
-A production-ready, full-stack SaaS boilerplate built with Next.js, Hono, Supabase, and Prisma. This monorepo provides a complete foundation for building modern SaaS applications with authentication, authorization, database management, and more.
+Numo is an extremely simple personal budget and expense tracking application designed around one principle: *Record spending in seconds. Understand your money at a glance.* This monorepo powers the backend API (Hono), web frontend (Next.js), database layer (Prisma + Supabase), and shared packages.
 
 ## 🏗️ Architecture
 
 This is a **Turborepo monorepo** containing:
 
-- **`apps/api`** - Hono.js REST API backend with Supabase Auth
-- **`apps/web`** - Next.js 16 frontend application
-- **`packages/database`** - Prisma schema and database utilities
-- **`packages/types`** - Shared TypeScript types and constants
-- **`packages/eslint-config`** - Shared ESLint configurations
-- **`packages/typescript-config`** - Shared TypeScript configurations
+- **`apps/api`** (`@numo/api`) - Hono.js REST API backend with Supabase Auth
+- **`apps/web`** (`@numo/web`) - Next.js 16 frontend application
+- **`packages/database`** (`@numo/database`) - Prisma schema and database utilities
+- **`packages/types`** (`@numo/types`) - Shared TypeScript types and constants
+- **`packages/eslint-config`** (`@numo/eslint-config`) - Shared ESLint configurations
+- **`packages/typescript-config`** (`@numo/typescript-config`) - Shared TypeScript configurations
 
 ## ✨ Features
 
@@ -56,8 +56,8 @@ This is a **Turborepo monorepo** containing:
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
-cd saas-boilerplate-next-hono
+git clone https://github.com/Khalil-Bchir/numo.git
+cd numo
 ```
 
 ### 2. Install Dependencies
@@ -80,13 +80,13 @@ Edit `.env.development` with your actual values. See [docs/SETUP.md](./docs/SETU
 
 ```bash
 # Generate Prisma client
-pnpm --filter @repo/database db:generate
+pnpm --filter @numo/database db:generate
 
 # Run migrations
-pnpm --filter @repo/database db:migrate:dev
+pnpm --filter @numo/database db:migrate:dev
 
 # (Optional) Seed the database
-pnpm --filter @repo/database db:seed:dev
+pnpm --filter @numo/database db:seed:dev
 ```
 
 ### 5. Start Development Servers
@@ -163,26 +163,26 @@ pnpm format           # Format code with Prettier
 pnpm check-types       # Type-check all packages
 
 # Database (from root)
-pnpm --filter @repo/database db:migrate:dev    # Run migrations
-pnpm --filter @repo/database db:generate       # Generate Prisma client
-pnpm --filter @repo/database db:seed:dev       # Seed database
-pnpm --filter @repo/database db:studio         # Open Prisma Studio
+pnpm --filter @numo/database db:migrate:dev    # Run migrations
+pnpm --filter @numo/database db:generate       # Generate Prisma client
+pnpm --filter @numo/database db:seed:dev       # Seed database
+pnpm --filter @numo/database db:studio         # Open Prisma Studio
 ```
 
 ### API App (`apps/api`)
 
 ```bash
-pnpm --filter api dev      # Start API dev server
-pnpm --filter api build    # Build API
-pnpm --filter api start    # Start production server
+pnpm --filter @numo/api dev      # Start API dev server
+pnpm --filter @numo/api build    # Build API
+pnpm --filter @numo/api start    # Start production server
 ```
 
 ### Web App (`apps/web`)
 
 ```bash
-pnpm --filter web dev      # Start Next.js dev server
-pnpm --filter web build    # Build Next.js app
-pnpm --filter web start    # Start production server
+pnpm --filter @numo/web dev      # Start Next.js dev server
+pnpm --filter @numo/web build    # Build Next.js app
+pnpm --filter @numo/web start    # Start production server
 ```
 
 ## 🔐 Authentication System
@@ -208,7 +208,7 @@ See [docs/AUTH.md](./docs/AUTH.md) for comprehensive documentation on how the au
 
 ## 🧩 Packages
 
-### `@repo/database`
+### `@numo/database`
 
 Prisma-based database package with schema, migrations, and client generation.
 
@@ -220,7 +220,7 @@ Prisma-based database package with schema, migrations, and client generation.
 
 See [packages/database/README.md](./packages/database/README.md) for details.
 
-### `@repo/types`
+### `@numo/types`
 
 Shared TypeScript types and constants used across the monorepo.
 
@@ -231,7 +231,7 @@ Shared TypeScript types and constants used across the monorepo.
 
 See [packages/types/README.md](./packages/types/README.md) for details.
 
-### `@repo/eslint-config`
+### `@numo/eslint-config`
 
 Shared ESLint configurations for consistent code quality.
 
@@ -242,7 +242,7 @@ Shared ESLint configurations for consistent code quality.
 
 See [packages/eslint-config/README.md](./packages/eslint-config/README.md) for details.
 
-### `@repo/typescript-config`
+### `@numo/typescript-config`
 
 Shared TypeScript configurations for consistent type checking.
 
@@ -279,15 +279,15 @@ Package management and workspace configuration is handled by pnpm. See `pnpm-wor
 ### API Deployment
 
 1. Set all required environment variables
-2. Build the API: `pnpm --filter api build`
-3. Run migrations: `pnpm --filter @repo/database db:migrate:prod`
-4. Start the server: `pnpm --filter api start`
+2. Build the API: `pnpm --filter @numo/api build`
+3. Run migrations: `pnpm --filter @numo/database db:migrate:prod`
+4. Start the server: `pnpm --filter @numo/api start`
 
 ### Web Deployment
 
 1. Set all `NEXT_PUBLIC_*` environment variables
-2. Build the app: `pnpm --filter web build`
-3. Start the server: `pnpm --filter web start`
+2. Build the app: `pnpm --filter @numo/web build`
+3. Start the server: `pnpm --filter @numo/web start`
 
 For Vercel deployment, the build process is handled automatically.
 

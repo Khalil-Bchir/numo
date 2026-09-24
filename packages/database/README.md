@@ -1,4 +1,4 @@
-# @repo/database
+# @numo/database
 
 Prisma-based database package providing type-safe database access, migrations, and seeding for the monorepo.
 
@@ -65,10 +65,10 @@ The Prisma schema (`prisma/schema.prisma`) defines:
 
 ```bash
 # Generate Prisma client (runs automatically on install)
-pnpm --filter @repo/database db:generate
+pnpm --filter @numo/database db:generate
 
 # Or from root
-pnpm --filter @repo/database db:generate
+pnpm --filter @numo/database db:generate
 ```
 
 This generates the Prisma Client in `node_modules/.prisma/client/` and TypeScript types.
@@ -76,7 +76,7 @@ This generates the Prisma Client in `node_modules/.prisma/client/` and TypeScrip
 ### Using Prisma Client
 
 ```typescript
-import { prisma } from '@repo/database'
+import { prisma } from '@numo/database'
 
 // In your code
 const user = await prisma.user.findUnique({
@@ -89,7 +89,7 @@ const user = await prisma.user.findUnique({
 Prisma generates TypeScript types automatically:
 
 ```typescript
-import type { User, UserRole } from '@repo/database'
+import type { User, UserRole } from '@numo/database'
 
 const user: User = {
   id: '...',
@@ -104,7 +104,7 @@ const user: User = {
 
 ```bash
 # Create and apply migration
-pnpm --filter @repo/database db:migrate:dev
+pnpm --filter @numo/database db:migrate:dev
 
 # This will:
 # 1. Detect schema changes
@@ -124,27 +124,27 @@ pnpm --filter @repo/database db:migrate:dev
 
 ```bash
 # Apply pending migrations (production-safe)
-pnpm --filter @repo/database db:migrate:prod
+pnpm --filter @numo/database db:migrate:prod
 
 # Or for staging
-pnpm --filter @repo/database db:migrate:staging
+pnpm --filter @numo/database db:migrate:staging
 ```
 
 ### Migration Status
 
 ```bash
 # Check migration status
-pnpm --filter @repo/database db:status:dev
+pnpm --filter @numo/database db:status:dev
 ```
 
 ### Resetting Database
 
 ```bash
 # ⚠️ WARNING: This will drop all data
-pnpm --filter @repo/database db:reset:dev
+pnpm --filter @numo/database db:reset:dev
 
 # Or for staging
-pnpm --filter @repo/database db:reset:staging
+pnpm --filter @numo/database db:reset:staging
 ```
 
 ## 🌱 Seeding
@@ -153,13 +153,13 @@ pnpm --filter @repo/database db:reset:staging
 
 ```bash
 # Seed development database
-pnpm --filter @repo/database db:seed:dev
+pnpm --filter @numo/database db:seed:dev
 
 # Seed staging database
-pnpm --filter @repo/database db:seed:staging
+pnpm --filter @numo/database db:seed:staging
 
 # Seed production database
-pnpm --filter @repo/database db:seed:prod
+pnpm --filter @numo/database db:seed:prod
 ```
 
 ### Seed Scripts
@@ -197,38 +197,38 @@ export async function seed() {
 
 ```bash
 # Generate Prisma Client
-pnpm --filter @repo/database db:generate
+pnpm --filter @numo/database db:generate
 
 # Create and apply migration
-pnpm --filter @repo/database db:migrate:dev
+pnpm --filter @numo/database db:migrate:dev
 
 # Apply migrations (production)
-pnpm --filter @repo/database db:migrate:prod
+pnpm --filter @numo/database db:migrate:prod
 
 # Push schema changes (dev only, no migration)
-pnpm --filter @repo/database db:push
+pnpm --filter @numo/database db:push
 
 # Pull schema from database
-pnpm --filter @repo/database db:pull
+pnpm --filter @numo/database db:pull
 
 # Seed database
-pnpm --filter @repo/database db:seed:dev
+pnpm --filter @numo/database db:seed:dev
 
 # Reset database (⚠️ drops all data)
-pnpm --filter @repo/database db:reset:dev
+pnpm --filter @numo/database db:reset:dev
 
 # Open Prisma Studio (database GUI)
-pnpm --filter @repo/database db:studio
+pnpm --filter @numo/database db:studio
 ```
 
 ### Build Scripts
 
 ```bash
 # Build TypeScript
-pnpm --filter @repo/database build
+pnpm --filter @numo/database build
 
 # Watch mode
-pnpm --filter @repo/database dev
+pnpm --filter @numo/database dev
 ```
 
 ## 🔍 Prisma Studio
@@ -236,7 +236,7 @@ pnpm --filter @repo/database dev
 Visual database browser:
 
 ```bash
-pnpm --filter @repo/database db:studio
+pnpm --filter @numo/database db:studio
 ```
 
 Opens Prisma Studio at `http://localhost:5555` - a GUI for browsing and editing your database.
@@ -283,7 +283,7 @@ If migrations conflict:
 
 ```bash
 # Resolve migration
-pnpm --filter @repo/database db:resolve:applied:dev <migration_name>
+pnpm --filter @numo/database db:resolve:applied:dev <migration_name>
 ```
 
 ### Client Generation Issues
@@ -291,7 +291,7 @@ pnpm --filter @repo/database db:resolve:applied:dev <migration_name>
 ```bash
 # Clean and regenerate
 rm -rf node_modules/.prisma
-pnpm --filter @repo/database db:generate
+pnpm --filter @numo/database db:generate
 ```
 
 ### Connection Issues

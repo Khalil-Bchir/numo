@@ -1,0 +1,9 @@
+{
+  "name": "@numo/ios",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Numo - Personal Budget iOS App built with SwiftUI and SwiftData",
+  "scripts": {
+    "clean": "rm -rf .build"
+  }
+}

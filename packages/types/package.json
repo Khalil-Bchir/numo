@@ -1,5 +1,5 @@
 {
-  "name": "@repo/types",
+  "name": "@numo/types",
   "version": "0.0.0",
   "type": "module",
   "main": "dist/index.js",
@@ -14,7 +14,7 @@
     "dev": "tsc --watch --preserveWatchOutput false"
   },
   "dependencies": {
-    "@repo/typescript-config": "workspace:*",
+    "@numo/typescript-config": "workspace:*",
     "typescript": "^5.8.2"
   }
 }

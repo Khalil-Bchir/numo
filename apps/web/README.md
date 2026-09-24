@@ -4,7 +4,7 @@ Modern, production-ready Next.js 16 frontend application with React 19, TypeScri
 
 ## 🎯 Overview
 
-This is the frontend application for the SaaS boilerplate, featuring:
+This is the frontend application for Numo, featuring:
 
 - **Next.js 16** - Latest App Router with React Server Components
 - **React 19** - Latest React features and improvements
@@ -110,7 +110,7 @@ NEXT_PUBLIC_DEFAULT_SIGNUP_ROLE=USER
 
 ```bash
 # Start dev server
-pnpm --filter web dev
+pnpm --filter @numo/web dev
 
 # Or from root
 pnpm dev
@@ -262,20 +262,20 @@ The app uses **Tailwind CSS** for styling:
 
 ```bash
 # Run tests (when implemented)
-pnpm --filter web test
+pnpm --filter @numo/web test
 
 # Type checking
-pnpm --filter web check-types
+pnpm --filter @numo/web check-types
 
 # Linting
-pnpm --filter web lint
+pnpm --filter @numo/web lint
 ```
 
 ## 🏗️ Building
 
 ```bash
 # Build for production
-pnpm --filter web build
+pnpm --filter @numo/web build
 
 # Output will be in .next/
 ```
@@ -295,13 +295,13 @@ Set all `NEXT_PUBLIC_*` variables in your deployment platform:
 ### Building
 
 ```bash
-pnpm --filter web build
+pnpm --filter @numo/web build
 ```
 
 ### Starting Server
 
 ```bash
-pnpm --filter web start
+pnpm --filter @numo/web start
 ```
 
 ### Vercel Deployment

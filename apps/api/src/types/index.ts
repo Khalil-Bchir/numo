@@ -1,8 +1,8 @@
 import type { Context } from 'hono'
 import type { SupabaseClient } from '@supabase/supabase-js'
-import type { PrismaClient } from '@repo/database'
+import type { PrismaClient } from '@numo/database'
 import type { i18n } from 'i18next'
-import type { Database } from '@repo/types'
+import type { Database } from '@numo/types'
 
 export interface Env {
   Variables: {
@@ -21,5 +21,5 @@ export interface Env {
 
 export type AppContext = Context<Env>
 
-export type { Database, Tables, TablesInsert, TablesUpdate, Enums, CompositeTypes } from '@repo/types'
+export type { Database, Tables, TablesInsert, TablesUpdate, Enums, CompositeTypes } from '@numo/types'
 

@@ -1,9 +1,9 @@
 /**
- * Shared DB-related types from @repo/types (Supabase-generated).
+ * Shared DB-related types from @numo/types (Supabase-generated).
  * Re-exports and aliases for use across the web app.
  */
 
-import type { Enums, Tables } from '@repo/types'
+import type { Enums, Tables } from '@numo/types'
 
 /** Database enum for user role (must match API/DB). */
 export type UserRole = Enums<'UserRole'>

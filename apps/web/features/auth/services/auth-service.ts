@@ -1,6 +1,6 @@
 import type { Profile, UserRole } from '@/lib/db-types'
 
-/** Backend/API role (same as DB enum from @repo/types). */
+/** Backend/API role (same as DB enum from @numo/types). */
 export type BackendUserRole = UserRole
 
 export const AUTH_ROUTES = {

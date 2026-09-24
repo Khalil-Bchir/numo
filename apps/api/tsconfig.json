@@ -7,10 +7,10 @@
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx",
     "paths": {
-      "@repo/database": ["../../packages/database/src/index.ts"],
-      "@repo/database/*": ["../../packages/database/src/*"],
-      "@repo/types": ["../../packages/types/src/index.ts"],
-      "@repo/types/*": ["../../packages/types/src/*"],
+      "@numo/database": ["../../packages/database/src/index.ts"],
+      "@numo/database/*": ["../../packages/database/src/*"],
+      "@numo/types": ["../../packages/types/src/index.ts"],
+      "@numo/types/*": ["../../packages/types/src/*"],
       "hono-autoload/types": ["node_modules/hono-autoload/types/autoloader"],
       "hono-autoload": ["node_modules/hono-autoload/index.ts"]
     },
